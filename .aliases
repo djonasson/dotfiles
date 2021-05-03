@@ -1,0 +1,21 @@
+alias sudo='sudo env PATH=$PATH'
+
+# Shortcut for complete directory listing
+alias l='ls -alh'
+
+# Git diff between current local and remote branch
+alias gdd='git diff origin/$(current_branch) $(current_branch)'
+
+alias localbranches="tput dim; tput setaf 7; echo 'LOCAL BRANCHES:'; tput sgr 0; git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset)|%(color:red)%(objectname:short)%(color:reset)|%(contents:subject)|%(color:magenta)%(authorname)%(color:reset)|%(color:cyan)%(committerdate:relative)%(color:reset)' | column -t -s '|'"
+
+alias remotebranches="tput dim; tput setaf 7; echo 'REMOTE BRANCHES:'; tput sgr 0; git for-each-ref --sort=committerdate refs/remotes/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset)|%(color:red)%(objectname:short)%(color:reset)|%(contents:subject)|%(color:magenta)%(authorname)%(color:reset)|%(color:cyan)%(committerdate:relative)%(color:reset)' | column -t -s '|'"
+
+alias branches="localbranches && remotebranches"
+
+alias gitlog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+
+alias logit="git log --color --graph --pretty=format:'%C(#dc322f)%h%C(#b58900)%d %C(#eee8d5)%s %C(#dc322f)| %C(#586f75)%cr %C(#dc322f)| %C(#586e75)%an%Creset' --abbrev-commit"
+
+alias bat="batcat"
+alias less="batcat --paging=always"
+alias cat="batcat --paging=never"

@@ -1,0 +1,13 @@
+setopt APPEND_HISTORY
+
+# Map right windows and menu keys (on my MS Natural Elite) to escape for a
+# better vim experience. Use "xev" to figure out the keycodes.
+xmodmap -e "keycode 134 = Escape"
+xmodmap -e "keycode 135 = Escape"
+
+# Autojump
+[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
+autoload -U compinit && compinit -u
+
+# Santander cyberark username
+export CYBERARK_USER="ysc00473"
