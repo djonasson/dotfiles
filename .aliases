@@ -1,5 +1,8 @@
 alias sudo='sudo env PATH=$PATH'
 
+# Reload .zshrc
+alias rzsh='. ~/.zshrc'
+
 # Shortcut for complete directory listing
 alias l='ls -alh'
 
