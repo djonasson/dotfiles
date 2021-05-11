@@ -213,6 +213,7 @@ Bundle 'tpope/vim-commentary.git'
     Bundle "snipmate-snippets"
   " }
   Bundle "garbas/vim-snipmate"
+  let g:snipMate = { 'snippet_version' : 1 }
 " }
 
 " nerdcommenter: vim global plugin that provides easy code commenting
