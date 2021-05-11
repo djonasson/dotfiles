@@ -1,8 +1,8 @@
-" vim: set foldmarker={,} foldlevel=0 foldmethod=marker:
+" vim: set foldmarker=, foldlevel=0 foldmethod=marker:
 
-" Environment {
+" Environment 
 
-  " Basics {
+  " Basics 
 
     " The set nocompatible setting makes vim behave in a more useful way (the
     " default) than the vi-compatible manner. Remove the “no” to keep the
@@ -18,9 +18,9 @@
     " your default position.
     let mapleader = ","
 
-  " }
+  " 
 
-  " Setup Vundle (Vim bUNDLE) support {
+  " Setup Vundle (Vim bUNDLE) support 
 
     " Disable automatic file type detection. We will later re-enable file-type
     " detection so don't worry...
@@ -28,47 +28,47 @@
     filetype off
 
     " We use Vundle to handle our plugins.
-    set rtp+=~/.vim/bundle/vundle/
+    set rtp+=~/.vim/bundle/Vundle.vim/
     call vundle#rc()
 
-  " }
+  " 
 
-" }
+" 
 
 
-" Bundles {
+" Bundles 
 
-   " Vundle {
+   " Vundle 
 
      " We use vundle to handle updates of itself.
      " REQUIRED for vundle
      Bundle 'gmarik/vundle'
 
-     " Help {
+     " Help 
        " :BundleList          - list configured bundles
        " :BundleInstall(!)    - install(update) bundles
        " :BundleSearch(!) foo - search(or refresh cache first) for foo
        " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
        "
        " see :h vundle for more details or wiki for FAQ
-     " }
+     " 
 
-   " }
+   " 
 
-   " Local bundles {
+   " Local bundles 
 
-     " Use local bundles if available {
+     " Use local bundles if available 
        if filereadable(expand("~/.vimrc.bundles"))
          source ~/.vimrc.bundles
        endif
-     " }
+     " 
 
-  " }
+  " 
 
-" }
+" 
 
 
-" General {
+" General 
 
   " Auto-detect the filetype.
   " REQUIRED for vundle
@@ -119,11 +119,11 @@
 
   " Don't redraw while executing macros (good performance config)
   set lazyredraw
-" } 
+"  
 
 
 
-" Visual Improvements {
+" Visual Improvements 
 
   "Highlight trailing whitespace
   set list listchars=trail:.
@@ -157,7 +157,7 @@
   " Set the default font
   set gfn=DejaVu\ Sans\ Mono\ 8
 
-  " Commandline setup {
+  " Commandline setup 
     if has('cmdline_info')
       " show the ruler
       set ruler
@@ -166,9 +166,9 @@
       " show partial commands in status line and selected characters/lines in visual mode
       set showcmd
     endif
-  " }
+  " 
 
-  " Statusline setup {
+  " Statusline setup 
     if has('statusline')
       set laststatus=2
 
@@ -178,19 +178,19 @@
       " Options
       set statusline+=%w%h%m%r
       " Git
-      set statusline+=%{fugitive#statusline()}
+      set statusline+=%fugitive#statusline()
       " filetype
-      set statusline+=\ [%{&ff}/%Y]
+      set statusline+=\ [%&ff/%Y]
       " current dir
-      set statusline+=\ [%{getcwd()}]
+      set statusline+=\ [%getcwd()]
       " Right aligned file nav info
       set statusline+=%=%-14.(%l,%c%V%)\ %p%%
     endif
-  " }
+  " 
 
-" }
+" 
 
-" Searching {
+" Searching 
   " start searching immediately when using /something
   set sm
 
@@ -202,14 +202,14 @@
 
   " ignore case while searching
   set ignorecase
-" }
+" 
 
-" Spell checking {
+" Spell checking 
   " Spell check when writing commit logs
   autocmd filetype svn,*commit* setlocal spell
-" }
+" 
 
-" Tabs and Indentation {
+" Tabs and Indentation 
   " Wrap too long lines
   set wrap
 
@@ -224,9 +224,9 @@
 
   " guess indentation
   set autoindent
-" }
+" 
 
-" Key re-mappings {
+" Key re-mappings 
 
   " Code folding options
   nmap <leader>f0 :set foldlevel=0<CR>
@@ -243,9 +243,9 @@
   " Clearing highlighted search
   nmap <silent> <leader>/ :nohlsearch<CR>
 
-" }
+" 
 
-" Backup {
+" Backup 
   " We backup to the ~/.vim/backup and ~/.vim/tmp folders instead of to the
   " current directory.
   set backup
@@ -285,9 +285,9 @@
     endif
   endfunction
   call InitBackupDir()
-" }
+" 
 
-" File handling and navigation {
+" File handling and navigation 
 
   " Expand the command line using tab
   set wildchar=<Tab>
@@ -309,13 +309,13 @@
   " Let vim know that .prawn files are actually ruby files.
   au BufNewFile,BufRead *.prawn set filetype=ruby
 
-" }
+" 
 
 
-" Use gvimrc if available and gui is running {
+" Use gvimrc if available and gui is running 
   if has('gui_running')
     if filereadable(expand("~/.gvimrc"))
       source ~/.gvimrc
     endif
   endif
-" }
+" 
