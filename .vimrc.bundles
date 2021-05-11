@@ -260,10 +260,26 @@ Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
 
 
 " Javascript
-Bundle 'leshill/vim-json'
-Bundle 'groenewege/vim-less'
-Bundle 'taxilian/vim-web-indent'
+"Bundle 'leshill/vim-json'
+"Bundle 'groenewege/vim-less'
+"Bundle 'taxilian/vim-web-indent'
+Bundle 'pangloss/vim-javascript'
+Bundle 'leafgarland/typescript-vim'
+Bundle 'peitalin/vim-jsx-typescript'
+Bundle 'styled-components/vim-styled-components'
+Bundle 'jparise/vim-graphql'
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
+" COC
+Bundle 'neoclide/coc.nvim'
+let g:coc_global_extensions = ['coc-tsserver']
+"if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+  let g:coc_global_extensions += ['coc-prettier']
+"endif
+"if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+  let g:coc_global_extensions += ['coc-eslint']
+"endif
 
 " PHP
 Bundle 'spf13/PIV'
