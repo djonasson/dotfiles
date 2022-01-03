@@ -1,15 +1,5 @@
 setopt APPEND_HISTORY
 
-# Map keys to escape for a better Vim experience. Use "xev" to figure out the
-# correct key codes.
-#
-# Right windows and menu keys on my MS Natural Elite
-xmodmap -e "keycode 134 = Escape"
-xmodmap -e "keycode 135 = Escape"
-# Right alt and ctrl keys on my Logitech Ergo K860
-xmodmap -e 'keycode 105=Escape'
-xmodmap -e 'keycode 108=Escape'
-
 # Autojump
 [[ -s /usr/share/autojump/autojump.sh ]] && . /usr/share/autojump/autojump.sh
 

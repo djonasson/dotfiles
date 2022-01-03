@@ -1,0 +1,13 @@
+! ============================================================================
+! Custom key bindings
+! ============================================================================
+
+! Map keys to escape for a better Vim experience. Use "xev" to figure out the
+! correct key codes.
+!
+! Right windows and menu keys on my MS Natural Elite
+keycode 134 = Escape
+keycode 135 = Escape
+!
+! Right alt and ctrl keys on my Logitech Ergo K860
+keycode 108=Escape
