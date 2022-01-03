@@ -1,7 +1,7 @@
 setopt APPEND_HISTORY
 
+# Load .xmodmaprc
+xmodmap ~/.xmodmaprc
+
 # Autojump
 [[ -s /usr/share/autojump/autojump.sh ]] && . /usr/share/autojump/autojump.sh
-
-# Santander cyberark username
-export CYBERARK_USER="ysc00473"
