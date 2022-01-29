@@ -8,11 +8,16 @@ export PATH=$HOME/.local/bin:$PATH
 antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle aliases
 antigen bundle autojump
-antigen bundle git
-antigen bundle pip
-#antigen bundle lein
 antigen bundle command-not-found
+antigen bundle docker
+antigen bundle docker-compose
+antigen bundle git
+antigen bundle lpass
+antigen bundle pip
+antigen bundle terraform
+antigen bundle tmux
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
