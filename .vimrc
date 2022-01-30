@@ -207,8 +207,8 @@
   set backup
   function InitBackupDir()
     let parent = ($XDG_CACHE_HOME ?  $XDG_CACHE_HOME : '~/.cache') . '/vim'
-    let backup = expand(parent) . '/backup/'
-    let tmp    = expand(parent) . '/tmp/'
+    let backup = parent . '/backup/'
+    let tmp    = parent . '/tmp/'
     if exists("*mkdir")
       if !isdirectory(parent)
         call mkdir(parent)
