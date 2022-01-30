@@ -57,14 +57,6 @@ Plugin 'scrooloose/nerdtree'
 " vim-commentary - comment stuff out
 Plugin 'tpope/vim-commentary'
 
-" syntastic: Syntax checking hacks for vim {
-  Plugin 'scrooloose/syntastic'
-  " Customizations {
-    let g:syntastic_enable_signs=1
-    let g:syntastic_auto_loc_list=2
-  " }
-" }
-
 " surround.vim: Quoting/parenthesizing made simple
 Plugin 'tpope/vim-surround'
 
@@ -219,9 +211,6 @@ Plugin 'vim-scripts/loremipsum.git'
     " and likewise 'git' for git.
   " }
 " }
-
-" vim-commentary - comment stuff out
-Plugin 'tpope/vim-commentary.git'
 
 " syntastic: Syntax checking hacks for vim {
   Plugin 'scrooloose/syntastic'
