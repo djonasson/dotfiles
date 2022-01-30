@@ -55,7 +55,7 @@ Plugin 'scrooloose/nerdtree'
 " }
 
 " vim-commentary - comment stuff out
-Plugin 'tpope/vim-commentary.git'
+Plugin 'tpope/vim-commentary'
 
 " syntastic: Syntax checking hacks for vim {
   Plugin 'scrooloose/syntastic'
