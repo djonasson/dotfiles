@@ -5,7 +5,8 @@
 let plugins_dir = ($XDG_DATA_HOME ? $XDG_DATA_HOME : '~/.local/share') . '/vim/bundle'
 
 " set the runtime path to include Vundle and initialize
-set rtp += plugins_dir . '/Vundle.vim'
+let &rtp .= ',' . expand(plugins_dir) . '/bundle/Vundle.vim'
+"set rtp += plugins_dir . '/Vundle.vim'
 
 " Pass a path where Vundle should install plugins
 call vundle#begin(plugins_dir)
