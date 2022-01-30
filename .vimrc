@@ -21,58 +21,16 @@
   "
 
   " Setup Vundle (Vim bUNDLE) support
-
-    " Disable automatic file type detection. We will later re-enable file-type
-    " detection so don't worry...
-    " REQUIRED for vundle
-    filetype off
-
-    " We use Vundle to handle our plugins.
-    set rtp+=~/.vim/bundle/Vundle.vim/
-    call vundle#rc()
-
-  "
-
-"
-
-
-" Bundles
-
-   " Vundle
-
-     " We use vundle to handle updates of itself.
-     " REQUIRED for vundle
-     Bundle 'gmarik/vundle'
-
-     " Help
-       " :BundleList          - list configured bundles
-       " :BundleInstall(!)    - install(update) bundles
-       " :BundleSearch(!) foo - search(or refresh cache first) for foo
-       " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-       "
-       " see :h vundle for more details or wiki for FAQ
-     "
-
-   "
-
-   " Local bundles
-
-     " Use local bundles if available
-       if filereadable(expand("~/.vimrc.bundles"))
-         source ~/.vimrc.bundles
-       endif
-     "
-
+   let vundle_config = "~/.vimrc.vundle" "TODO: $XDG_CONFIG_HOME . '/vim/.vimrc.vundle'
+   if filereadable(expand(vundle_config))
+     source vundle_config
+   endif
   "
 
 "
 
 
 " General
-
-  " Auto-detect the filetype.
-  " REQUIRED for vundle
-  filetype plugin indent on
 
   " allow to change buffers although the current one hasn't been saved
   set hidden
@@ -244,12 +202,11 @@
 "
 
 " Backup
-  " We backup to the ~/.vim/backup and ~/.vim/tmp folders instead of to the
-  " current directory.
+  " We backup to the $XDG_CACHE_HOME/vim/backup and $XDG_CACHE_HOME/vim/tmp
+  " folders instead of to the current directory.
   set backup
   function InitBackupDir()
-    let separator = "."
-    let parent = $HOME .'/' . separator . 'vim/'
+    let parent = $XDG_CACHE_HOME . '/vim/'
     let backup = parent . 'backup/'
     let tmp    = parent . 'tmp/'
     if exists("*mkdir")

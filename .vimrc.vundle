@@ -1,0 +1,349 @@
+" =============================================================================
+" Start Vundle setup
+" =============================================================================
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.local/share/vim/bundle/Vundle.vim
+
+" Pass a path where Vundle should install plugins
+call vundle#begin('~/.local/share/vim/bundle')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" =============================================================================
+" Add Plugins
+" =============================================================================
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+" Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+" Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+
+" NERDtree: A tree explorer plugin for vim.
+Plugin 'scrooloose/nerdtree'
+
+" NERDtree-tabs: NERDTree and tabs together in Vim, painlessly {
+  Plugin 'jistr/vim-nerdtree-tabs'
+  " Customizations {
+    map <F11> <plug>NERDTreeTabsToggle<CR>
+    map <F12> <plug>NERDTreeMirrorToggle<CR>
+    let g:nerdtree_tabs_open_on_gui_startup = 0
+    let g:nerdtree_tabs_open_on_console_startup = 0
+    let g:nerdtree_tabs_smart_startup_focus = 1
+    let g:nerdtree_tabs_open_on_new_tab = 1
+    let g:nerdtree_tabs_meaningful_tab_names = 1
+    let g:nerdtree_tabs_autoclose = 1
+    let g:nerdtree_tabs_synchronize_view = 1
+    let g:nerdtree_tabs_focus_on_files = 0
+  " }
+" }
+
+" vim-commentary - comment stuff out
+Plugin 'tpope/vim-commentary.git'
+
+" syntastic: Syntax checking hacks for vim {
+  Plugin 'scrooloose/syntastic'
+  " Customizations {
+    let g:syntastic_enable_signs=1
+    let g:syntastic_auto_loc_list=2
+  " }
+" }
+
+" surround.vim: Quoting/parenthesizing made simple
+Plugin 'tpope/vim-surround'
+
+" vim-multiple-cursors: True Sublime Text style multiple selections for Vim
+Plugin 'terryma/vim-multiple-cursors'
+" Help {
+  " Ctrl-n - highlights the current word under the cursor in Visual mode and
+  " places a virtual cursor at the end of it. If you select multiple lines in
+  " Visual mode, pressing the key puts a virtual cursor at every line and
+  " leaves you in Normal mode.
+" }
+
+" vim-fuzzyfinder: Fuzzy/Partial pattern explorer for buffer/file/MRU/command/bookmark/tag/etc. {
+  Plugin 'clones/vim-fuzzyfinder'
+  Plugin 'clones/vim-l9'
+  " Customizations {
+    map <leader>F :FufFile<CR>
+    map <leader>f :FufTaggedFile<CR>
+    map <leader>s :FufTag<CR>
+  " }
+" }
+
+" vim-supertab: Supertab aims to provide tab completion to satisfy all your insert completion needs (:help ins-completion).
+Plugin 'ervandew/supertab'
+
+" Fuzzy file, buffer, mru and tag finder {
+  Plugin 'ctrlpvim/ctrlp.vim'
+  " Help {
+    " Ctrl-p - start search
+    " Once search open:
+    " Ctrl-d - filename only search
+    " Ctrl-r - regexp mode
+    " Ctrl-y - create a new file with parent directories
+    " Ctrl-z - mark/unmark files, Ctrl-o to open them
+    " F5 - purge cache
+  " }
+" }
+
+" Powerline is a utility plugin which allows you to create
+" better-looking, more functional vim statuslines.
+Plugin 'Lokaltog/vim-powerline'
+
+" EasyMotion provides a much simpler way to use some motions in vim {
+  Plugin 'Lokaltog/vim-easymotion'
+  " Help {
+    " Triggered by <leader><leader>
+    " For example, to search for the letter 'o':
+    " <leader><leader>fo
+    " Or by word:
+    " <leader><leader>w
+  " }
+" }
+
+" Make gvim-only colorschemes work transparently in terminal vim
+Plugin 'godlygeek/csapprox'
+
+" BufOnly: Delete all the buffers except the current/named buffer
+Plugin 'vim-scripts/BufOnly.vim'
+
+" loremipsum: Insert a dummy text of a certain length.
+Plugin 'vim-scripts/loremipsum.git'
+
+" minibufexpl: Elegant buffer explorer - takes very little screen space {
+  Plugin 'weynhamz/vim-plugin-minibufexpl.git'
+  " Customizations {
+    noremap <C-TAB>   :MBEbn<CR>
+    noremap <C-S-TAB> :MBEbp<CR>
+    "let g:miniBufExplUseSingleClick = 1
+    "let g:miniBufExplMapCTabSwitchBufs = 1
+    "let g:miniBufExplMapWindowNavVim = 1
+    "let g:miniBufExplMaxSize = 2
+    "let g:miniBufExplCheckDupeBufs = 0
+  " }
+" }
+
+" ack.vim: This plugin will allow you to run ack from vim, and shows the results in a split window. {
+  Plugin 'mileszs/ack.vim'
+  " Help {
+    " :Ack [options] {pattern} [{directory}]
+  " }
+" }
+
+" vim-fugitive: a Git wrapper so awesome, it should be illegal {
+  Plugin 'tpope/vim-fugitive'
+
+  " Help {
+
+    " View any blob, tree, commit, or tag in the repository with :Gedit,
+    " :Gsplit, :Gvsplit, :Gtabedit
+    "
+    " :Gstatus - Show git status. Use '-' to add/reset a file's changes or
+    " 'p' to add/reset --patch
+    "
+    " :Gcommit - git commit
+    "
+    " :Gdiff - bring up the staged version of the file side by side with the
+    " working tree version and use Vim's diff handling capabilities to stage
+    " a subset of the file's changes
+    "
+    " :Gblame - interactive vertical split with git blame output. Press enter
+    " on a line to reblame the file as it stood in that commit, or o to open
+    " that commit in a split. When you're done, use :Gedit in the historic
+    " buffer to go back to the work tree version.
+    "
+    " :Gmove - does a git mv on a file and simultaneously renames the buffer.
+    "
+    " :Gremove - does a git rm on a file and simultaneously deletes the
+    " buffer.
+    "
+    " :Ggrep - search the work tree (or any arbitrary commit) with git grep,
+    " skipping over that which is not tracked in the repository.
+    "
+    " :Glog - loads all previous revisions of a file into the quickfix list
+    " so you can iterate over them and watch the file evolve!
+    "
+    " :Git - run any arbitrary command.
+    "
+    " :Git! - open the output of a command in a temp file.
+    "
+    " More help can be found here:
+    " https://github.com/tpope/vim-fugitive
+
+  " }
+" }
+
+" SCMDiff: Highlight changed lines in a file via SCM diff command.  {
+  Plugin 'SCMDiff'
+
+  " Customizations {
+    " Use git as default
+    let g:SCMDiffCommand='git'
+  " }
+
+  " Help {
+    " It allows you to quickly toggle (through a keybinding, Ctrl-D
+    " by default) the highlighting of changed lines in a file through
+    " an SCM's diff command.
+    "
+    " It also binds Ctrl-G to :set nodiff to quickly turn off the
+    " highlighting.
+    "
+    " The original script was written for git, but this version works
+    " for (at least) Mercurial and Subversion as well.  CVS and
+    " Perforce likely work but have not been tested.
+    "
+    " It likely only works on Unix systems, or at least systems with
+    " 'cat' and 'patch', in addition to the SCM's command.
+    "
+    " Configuration consists of the variable g:SCMDiffCommand, which
+    " if not set will be set to 'svn', assuming Subversion.
+    " If g:SCMDiffCommand is set to 'hg', it works for Mercurial,
+    " and likewise 'git' for git.
+  " }
+" }
+
+" vim-commentary - comment stuff out
+Plugin 'tpope/vim-commentary.git'
+
+" syntastic: Syntax checking hacks for vim {
+  Plugin 'scrooloose/syntastic'
+  " Customizations {
+    let g:syntastic_enable_signs=1
+    let g:syntastic_auto_loc_list=2
+  " }
+" }
+
+" vim-snipmate: aims to be a concise vim script that implements some of TextMate's snippets features in Vim. {
+  " Dependencies {
+    Plugin "MarcWeber/vim-addon-mw-utils"
+    Plugin "tomtom/tlib_vim"
+    Plugin "snipmate-snippets"
+  " }
+  Plugin "garbas/vim-snipmate"
+  let g:snipMate = { 'snippet_version' : 1 }
+" }
+
+" nerdcommenter: vim global plugin that provides easy code commenting
+Plugin 'scrooloose/nerdcommenter'
+
+" tabular: Configurable, flexible, intuitive text aligning. {
+  Plugin 'godlygeek/tabular'
+  " Help {
+    " Make a table with a comma as a column separator
+    " :Tabularize /,
+    " Make the same table with columns right aligned and no padding
+    " :Tabularize /,/r0
+    " :Tab is a shortcut for :Tabularize
+    " right align the text before the comma, and left align the text after the comma
+    " after the comma
+    " :Tabularize /,/r1c1l0
+    " :help Tabular.txt
+  " }
+" }
+
+" tagbar - Vim plugin that displays tags in a window, ordered by class etc. {
+  Plugin 'majutsushi/tagbar'
+
+  " Customizations {
+    nmap <F8> :TagbarToggle<CR>
+  " }
+
+  " Help {
+    " Use F8 to toggle the tagbar
+  " }
+" }
+
+" Neocomplcache performs keyword completion by making a cache of keywords in a
+" buffer.
+Plugin 'Shougo/neocomplcache'
+
+" HTML
+Plugin 'HTML-AutoCloseTag'
+
+" CSS
+" Plugin 'ChrisYip/Better-CSS-Syntax-for-Vim'
+
+" Javascript
+" Plugin 'pangloss/vim-javascript'
+" Plugin 'leafgarland/typescript-vim'
+" Plugin 'peitalin/vim-jsx-typescript'
+" Plugin 'styled-components/vim-styled-components'
+" Plugin 'jparise/vim-graphql'
+" autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+" autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+
+" COC
+" Plugin 'neoclide/coc.nvim'
+" let g:coc_global_extensions = ['coc-tsserver']
+" "if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+"   let g:coc_global_extensions += ['coc-prettier']
+" "endif
+" "if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+"   let g:coc_global_extensions += ['coc-eslint']
+" "endif
+
+" Python
+# Plugin 'klen/python-mode'
+# Plugin 'python.vim'
+# Plugin 'python_match.vim'
+# Plugin 'pythoncomplete'
+
+
+" Ruby/Rails
+" " add 'end' in ruby, endfunction/endif/more in vim script, etc
+" Plugin 'tpope/vim-endwise'
+" Plugin 'tpope/vim-cucumber'
+" " Ruby on Rails power tools
+" Plugin 'tpope/vim-rails.git'
+" " Vim runtime files for Haml, Sass, and SCSS
+" Plugin 'tpope/vim-haml.git'
+" " A railscasts color theme that works in 256color terminals as well as gui
+" Plugin 'vim-scripts/Railscasts-Theme-GUIand256color'
+
+
+" =============================================================================
+" Finish Vundle setup
+" =============================================================================
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+
+
+
+
+
+
+
+
+
+
+
+
