@@ -206,9 +206,9 @@
   " folders instead of to the current directory.
   set backup
   function InitBackupDir()
-    let parent = ($XDG_CACHE_HOME ?  $XDG_CACHE_HOME : '~/.cache') . '/vim/'
-    let backup = parent . 'backup/'
-    let tmp    = parent . 'tmp/'
+    let parent = ($XDG_CACHE_HOME ?  $XDG_CACHE_HOME : '~/.cache') . '/vim'
+    let backup = expand(parent) . '/backup/'
+    let tmp    = expand(parent) . '/tmp/'
     if exists("*mkdir")
       if !isdirectory(parent)
         call mkdir(parent)
