@@ -211,7 +211,7 @@
     let tmp    = parent . '/tmp/'
     if exists("*mkdir")
       if !isdirectory(parent)
-        call mkdir(parent)
+        call mkdir(parent, 'p')
       endif
       if !isdirectory(backup)
         call mkdir(backup)
