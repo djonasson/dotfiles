@@ -220,16 +220,6 @@ Plugin 'vim-scripts/loremipsum.git'
   " }
 " }
 
-" vim-snipmate: aims to be a concise vim script that implements some of TextMate's snippets features in Vim. {
-  " Dependencies {
-    Plugin "MarcWeber/vim-addon-mw-utils"
-    Plugin "tomtom/tlib_vim"
-    Plugin "snipmate-snippets"
-  " }
-  Plugin "garbas/vim-snipmate"
-  let g:snipMate = { 'snippet_version' : 1 }
-" }
-
 " nerdcommenter: vim global plugin that provides easy code commenting
 Plugin 'scrooloose/nerdcommenter'
 
@@ -290,10 +280,10 @@ Plugin 'HTML-AutoCloseTag'
 " "endif
 
 " Python
-# Plugin 'klen/python-mode'
-# Plugin 'python.vim'
-# Plugin 'python_match.vim'
-# Plugin 'pythoncomplete'
+" Plugin 'klen/python-mode'
+" Plugin 'python.vim'
+" Plugin 'python_match.vim'
+" Plugin 'pythoncomplete'
 
 
 " Ruby/Rails
