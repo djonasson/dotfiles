@@ -23,7 +23,7 @@
   " Setup Vundle (Vim bUNDLE) support
    let vundle_config = "~/.vimrc.vundle" "TODO: $XDG_CONFIG_HOME . '/vim/.vimrc.vundle'
    if filereadable(expand(vundle_config))
-     source vundle_config
+     exec "source " . vundle_config
    endif
   "
 
@@ -206,7 +206,7 @@
   " folders instead of to the current directory.
   set backup
   function InitBackupDir()
-    let parent = $XDG_CACHE_HOME . '/vim/'
+    let parent = ($XDG_CACHE_HOME ?  $XDG_CACHE_HOME : '~/.cache') . '/vim/'
     let backup = parent . 'backup/'
     let tmp    = parent . 'tmp/'
     if exists("*mkdir")
