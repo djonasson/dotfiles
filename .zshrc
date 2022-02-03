@@ -27,3 +27,18 @@ antigen theme robbyrussell
 
 # Tell Antigen that you're done.
 antigen apply
+
+# Source .aliases if it exists.
+if [ -f "$XDG_DATA_HOME/dotfiles/.aliases" ]; then
+  . "$XDG_DATA_HOME/dotfiles/.aliases"
+fi
+
+# Source .exports if it exists.
+if [ -f "$XDG_DATA_HOME/dotfiles/.exports" ]; then
+  . "$XDG_DATA_HOME/dotfiles/.exports"
+fi
+
+# Source .personal if it exists.
+if [ -f "$XDG_DATA_HOME/dotfiles/.personal" ]; then
+  . "$XDG_DATA_HOME/dotfiles/.personal"
+fi
