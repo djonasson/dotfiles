@@ -21,7 +21,7 @@
   "
 
   " Setup Vundle (Vim bUNDLE) support
-   let vundle_config = "~/.vimrc.vundle" "TODO: $XDG_CONFIG_HOME . '/vim/.vimrc.vundle'
+   let vundle_config = $HOME . "/.vimrc.vundle" "TODO: $XDG_CONFIG_HOME . '/vim/.vimrc.vundle'
    if filereadable(expand(vundle_config))
      exec "source " . vundle_config
    endif
@@ -206,7 +206,7 @@
   " folders instead of to the current directory.
   set backup
   function InitBackupDir()
-    let parent = ($XDG_CACHE_HOME ?  $XDG_CACHE_HOME : '~/.cache') . '/vim'
+    let parent = ($XDG_CACHE_HOME ?  $XDG_CACHE_HOME : ($HOME . '/.cache')) . '/vim'
     let backup = parent . '/backup/'
     let tmp    = parent . '/tmp/'
     if exists("*mkdir")
@@ -269,8 +269,9 @@
 
 " Use gvimrc if available and gui is running
   if has('gui_running')
-    if filereadable(expand("~/.gvimrc"))
-      source ~/.gvimrc
+    let gvimrc = expand($HOME . "/.gvimrc")
+    if filereadable(gvimrc)
+      exec "source " . gvimrc
     endif
   endif
 "
