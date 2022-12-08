@@ -31,6 +31,9 @@ antigen theme robbyrussell
 # Tell Antigen that you're done.
 antigen apply
 
+# Molecule autocompletion
+eval "$(_MOLECULE_COMPLETE=zsh_source molecule)"
+
 # Source .aliases if it exists.
 if [ -f "$XDG_DATA_HOME/dotfiles/.aliases" ]; then
   . "$XDG_DATA_HOME/dotfiles/.aliases"
