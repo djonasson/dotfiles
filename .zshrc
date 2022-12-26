@@ -15,6 +15,7 @@ antigen bundle docker
 antigen bundle docker-compose
 antigen bundle git
 antigen bundle git-flow
+antigen bundle git-prompt
 antigen bundle helm
 antigen bundle kubectl
 antigen bundle lpass
