@@ -5,3 +5,6 @@ xmodmap ~/.xmodmaprc
 
 # Autojump
 [[ -s /usr/share/autojump/autojump.sh ]] && . /usr/share/autojump/autojump.sh
+
+# Bitwarden zsh autocompletion
+eval "$(bw completion --shell zsh); compdef _bw bw;"
