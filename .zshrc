@@ -18,7 +18,6 @@ antigen bundle git-flow
 antigen bundle git-prompt
 antigen bundle helm
 antigen bundle kubectl
-antigen bundle lpass
 antigen bundle pip
 antigen bundle terraform
 antigen bundle tmux
