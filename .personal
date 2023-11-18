@@ -8,3 +8,7 @@ xmodmap ~/.xmodmaprc
 
 # Bitwarden zsh autocompletion
 eval "$(bw completion --shell zsh); compdef _bw bw;"
+
+# Volta (JavaScript tool manager)
+export VOLTA_HOME=$HOME/.volta
+export PATH=$VOLTA_HOME/bin:$PATH
