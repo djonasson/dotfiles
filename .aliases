@@ -33,7 +33,7 @@ alias logit="git log --color --graph --pretty=format:'%C(#dc322f)%h%C(#b58900)%d
 # ============================================================================
 
 # Replace ls with eza
-alias ls='exa'
+# alias ls='eza'
 
 # Complete directory listing.
 alias l='ls -alh'

@@ -10,9 +10,15 @@ antigen use oh-my-zsh
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle aliases
 antigen bundle autojump
+antigen bundle colored-man-pages
 antigen bundle command-not-found
+antigen bundle copybuffer
+antigen bundle copyfile
+antigen bundle copypath
+antigen bundle dirhistory
 antigen bundle docker
 antigen bundle docker-compose
+antigen bundle eza
 antigen bundle git
 antigen bundle git-flow
 antigen bundle git-prompt
